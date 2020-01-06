@@ -1,0 +1,13 @@
+{{#each stories}}
+  <div class="card card-body mb-2 ">
+    <h3>{{title}}</h3>
+    <p>{{details}}</p>
+    <a href="stories/edit/{{id}}" class="btn btn-block btn-dark mb-2">Edit</a>
+    <form action="stories/{{id}}?_method=DELETE" method="post">
+      <input type="hidden" name="_method" value="DELETE" />
+      <input type="submit" class="btn btn-block btn-danger" value="Delete" />
+    </form>
+  </div>
+{{else}}
+  <p>No stories found. <a href="stories/add">Start Writing?</a></p>
+{{/each}}
